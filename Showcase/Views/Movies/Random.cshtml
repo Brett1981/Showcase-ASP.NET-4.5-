@@ -1,0 +1,27 @@
+﻿@model Showcase.ViewModel.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Random</h2>
+
+@*
+    Temp
+*@
+@{ 
+    var className = Model.customers.Count > 0 ? "popular" : null;
+}
+<h2 class="@className">@Model.Movie.Name</h2>
+@if (Model.customers.Count == 0)
+{
+    <p>NaN</p>
+}
+else
+{<ul>
+    @foreach (var customer in Model.customers)
+    {
+        <li>@customer.Name</li>
+    }
+</ul>
+}
